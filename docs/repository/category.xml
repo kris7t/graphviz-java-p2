@@ -41,7 +41,7 @@
   <bundle id="org.apache.commons.io">
     <category name="orbit"/>
   </bundle>
-  <bundle id="org.apache.commons.io.sources">
+  <bundle id="org.apache.commons.io.source">
     <category name="orbit"/>
   </bundle>
   <bundle id="org.slf4j.api">

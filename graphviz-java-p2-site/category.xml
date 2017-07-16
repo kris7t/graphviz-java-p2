@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+  <category-def name="graphviz" label="graphviz-java">
+    <description>
+      Use graphviz with pure Java.
+
+      Using graphviz-java inside Eclipse requires at least an SLF4J implementation. This update site contains the SLF4J LOG4J-12 Binding from Eclipse Orbit, which can be installed to satisfy this dependency. Other SLF4J bindings might lead to unexpected behavior in other plugins that rely on Orbit logging libraries.
+
+      In addition, graphviz execution without a native installation of the graphviz binaries relies on J2V8 to execute the Javascript version of graphviz. J2V8 is also included in this update site.
+
+      For convenience, other dependencies are mirrored from Orbit with the exception of Apache Batik, which should be included in target platforms by e.g. the Graphical Modeling Framework (GMF) Runtime feature.
+    </description>
+  </category-def>
+  <category-def name="j2v8" label="J2V8">
+    <description>
+      J2V8 is a set of Java bindings for V8.
+    </description>
+  </category-def>
+  <category-def name="orbit" label="Supplementary bundles from Orbit">
+    <description>
+      Some bundles mirrored from Eclipse Orbit for convenience.
+    </description>
+  </category-def>
+  <category-def name="maven" label="Maven osgi-bundles">
+    <description>
+      Bundles packaged by the p2-maven-plugin. Install the graphviz-java Feature instead of installing these bundles directly.
+    </description>
+  </category-def>
+  <feature id="hu.bme.mit.inf.graphviz.p2.graphviz.feature">
+    <category name="graphviz"/>
+  </feature>
+  <feature id="hu.bme.mit.inf.graphviz.p2.graphviz.feature.sources">
+    <category name="graphviz"/>
+  </feature>
+  <feature id="hu.bme.mit.inf.graphviz.p2.j2v8.feature">
+    <category name="j2v8"/>
+  </feature>
+  <bundle id="org.apache.commons.exec">
+    <category name="orbit"/>
+  </bundle>
+  <bundle id="org.apache.commons.io">
+    <category name="orbit"/>
+  </bundle>
+  <bundle id="org.apache.commons.io.sources">
+    <category name="orbit"/>
+  </bundle>
+  <bundle id="org.slf4j.api">
+    <category name="orbit"/>
+  </bundle>
+  <bundle id="org.slf4j.impl.log4j12">
+    <category name="orbit"/>
+  </bundle>
+  <iu>
+    <category name="maven"/>
+    <query>
+      <expression type="match">providedCapabilities.exists(p | p.namespace == 'osgi.bundle')</expression>
+    </query>
+  </iu>
+</site>

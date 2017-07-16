@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001 XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>hu.bme.mit.inf.graphviz.p2</groupId>
+  <artifactId>graphviz-java-p2-parent</artifactId>
+  <packaging>pom</packaging>
+  <version>0.2.1</version>
+  <properties>
+    <graphviz-java.version>${project.version}</graphviz-java.version>
+    <j2v8.version>4.6.0</j2v8.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+
+  <modules>
+    <module>graphviz-feature</module>
+    <module>graphviz-feature-sources</module>
+    <module>j2v8-feature</module>
+    <module>graphviz-java-p2-site</module>
+  </modules>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.reficio</groupId>
+          <artifactId>p2-maven-plugin</artifactId>
+          <version>1.2.0</version>
+          <executions>
+            <execution>
+              <id>generate-p2-site</id>
+              <phase>compile</phase>
+              <goals>
+                <goal>site</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>Mars.2+</id>
+      <url>http://download.eclipse.org/tools/orbit/downloads/drops/R20160221192158/repository</url>
+      <layout>p2</layout>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>reficio</id>
+      <url>http://repo.reficio.org/maven/</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+
+</project>
